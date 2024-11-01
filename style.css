@@ -8,13 +8,33 @@
     --correct: #168A44;
 
     --font-sans-serif: "Noto Sans", sans-serif;
+
+
+    /* BS Palette */
+
+    --bs-primary: var(--dependant-light);
+    --bs-primary-rgb: 255, 72, 31;
+
+    --bs-body-bg: var(--dependant-light)
+
 }
 
 header, footer {
     background-color: var(--dependant-dark);
 }
 
+header {
+    height: 110px;
+}
+
 body {
-    background-color: var(--dependant-light);
     font-family: var(--font-sans-serif);
+}
+
+.nav-logo {
+    width: 164px;
+}
+
+.nav-logo .loggedin {
+    width: 103px;
 }
