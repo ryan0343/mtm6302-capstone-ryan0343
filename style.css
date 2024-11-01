@@ -6,4 +6,15 @@
     --black: #1F1F1F;
     --shadow: #1f1f1f4f;
     --correct: #168A44;
+
+    --font-sans-serif: "Noto Sans", sans-serif;
+}
+
+header, footer {
+    background-color: var(--dependant-dark);
+}
+
+body {
+    background-color: var(--dependant-light);
+    font-family: var(--font-sans-serif);
 }
