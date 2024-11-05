@@ -15,23 +15,49 @@
     --bs-primary: var(--dependant-light);
     --bs-primary-rgb: 255, 72, 31;
 
-    --bs-body-bg: var(--dependant-light)
+    --bs-secondary: var(--dependant-dark);
+    --bs-secondary-rgb: 163, 30, 0;
 
+    --bs-body-bg: var(--dependant-light);
+
+    --bs-white: var(--white);
+    --bs-dark: var(var(--black))
 }
 
-header, footer {
+/* BS BTN STYLES */
+
+.btn {
+    --bs-btn-font-size: 1.25rem;
+}
+
+.btn-custom-white {
+    --bs-btn-color: var(--dependant-dark);
+    --bs-btn-bg: var(--bs-white);
+    --bs-btn-border-color: var(--dependant-dark);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--dependant-dark);
+    --bs-btn-hover-border-color: var(--bs-white);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-primary);
+    --bs-btn-active-border-color: var(--bs-secondary);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+/* HEADER/FOOTER STYLES */
+
+header,
+footer {
     background-color: var(--dependant-dark);
     color: var(--white);
 }
 
 header {
-    height: 110px;
-    border-bottom: 12px solid var(--shadow);
+    border-top: 12px solid var(--shadow);
 }
 
 footer {
     height: 184px;
-    border-top: 12px solid var(--shadow);
 }
 
 footer a {
@@ -43,15 +69,103 @@ footer img {
     fill: var(--dependant-light);
 }
 
+/* GENERAL STYLES */
 
 body {
     font-family: var(--font-sans-serif);
 }
 
+.rounded-21 {
+    border-radius: 21px;
+}
+
+.rounded-32 {
+    border-radius: 32px;
+}
+
+/* PHONE STYLES */
+
+/* Make the Navbar collapse above */
+.navbar-collapse {
+    position: absolute;
+    bottom: 100%;
+    /* Position the menu above the navbar */
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    /* Ensure it's above other elements */
+    background-color: var(--bs-secondary);
+}
+
 .nav-logo {
     width: 164px;
+    margin: 0 auto;
 }
 
 .nav-logo .loggedin {
     width: 103px;
+}
+
+.nav-link {
+    color: var(--bs-white);
+}
+
+.mainCard {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.mainCard .form-group {
+    height: 361px;
+    margin: 0 auto;
+}
+
+.mainCard h2 {
+    font-size: 2.25rem;
+}
+
+.mainCard .btn {
+    width: 264px;
+    height: 59px;
+}
+
+.btn-custom {
+    width: 264px;
+    margin: 0 auto;
+}
+
+.btn-custom-nav {
+    max-width: 233px;
+}
+
+nav .navbar-toggler {
+    margin: 0 auto;
+}
+
+.centerItem {
+    margin: 0 auto;
+}
+
+/* TABLET STYLES */
+
+@media (min-width: 768px) {
+    header {
+        height: 110px;
+        border-top: none;
+        border-bottom: 12px solid var(--shadow);
+    }
+
+    footer {
+        border-top: 12px solid var(--shadow);
+    }
+
+    /* On medium and larger screens, display navbar as usual */
+    .navbar-collapse {
+        position: relative; /* Default positioning */
+    }
+
+    .btn-custom-nav {
+        width: 175px;
+    }
+
 }
