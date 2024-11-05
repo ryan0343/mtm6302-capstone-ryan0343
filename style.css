@@ -4,7 +4,7 @@
     --dependant-dark: #A31E00;
     --white: #FDFDFD;
     --black: #1F1F1F;
-    --shadow: #1f1f1f4f;
+    --shadow: #1f1f1f2b;
     --correct: #168A44;
 
     --font-sans-serif: "Noto Sans", sans-serif;
@@ -21,11 +21,28 @@
 
 header, footer {
     background-color: var(--dependant-dark);
+    color: var(--white);
 }
 
 header {
     height: 110px;
+    border-bottom: 12px solid var(--shadow);
 }
+
+footer {
+    height: 184px;
+    border-top: 12px solid var(--shadow);
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer img {
+    fill: var(--dependant-light);
+}
+
 
 body {
     font-family: var(--font-sans-serif);
