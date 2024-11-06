@@ -42,20 +42,20 @@
 
                 <!-- Hamburger toggle button for smaller screens -->
                 <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarNav-OUT" aria-controls="navbarNav-OUT" aria-expanded="false"
+                    aria-label="Toggle navigation" id="hamburger-OUT">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Navbar menu items -->
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Navbar menu items - SIGNED OUT -->
+                <div class="collapse navbar-collapse" id="navbarNav-OUT">
                     <ul class="navbar-nav ms-auto align-content-around my-3">
                         <li class="nav-item">
                             <a class="nav-link d-block d-md-none text-center mx-auto" href="index.html"><img
                                     class="nav-logo" src="assets/svg/Quizzy-Logo-1.svg" alt="Quizzy Logo"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold text-center" href="/signIn.html">Sign In</a>
+                            <a class="nav-link fw-bold text-center" href="signIn.html">Sign In</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-custom-white d-block mb-2 fw-bold rounded-21 btn-custom-nav ms-md-2 mx-auto"
@@ -63,6 +63,35 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- NAVBAR - SIGNED IN -->
+                <!-- Hamburger toggle button for smaller screens -->
+                <!-- <button class="disable navbar-toggler mx-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav-IN" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation" id="hamburger-IN">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <!-- Navbar menu items - SIGNED IN -->
+                <!-- <div class="disable collapse navbar-collapse" id="navbarNav-IN">
+                    <ul class="navbar-nav ms-auto list-unstyled d-flex flex-column flex-md-row justify-content-center">
+                        <li class="nav-item px-1">
+                            <a class="nav-link d-block d-md-none text-center mx-auto" href="index.html"><img
+                                    class="nav-logo" src="assets/svg/Quizzy-Logo-1.svg" alt="Quizzy Logo"></a>
+                        </li>
+                        <li class="nav-item mx-auto order-0 order-md-last g-md-5">
+                            <img class="profile-pic mx-auto ms-md-3" src="/assets/images/Profile_avatar_placeholder_large.png" alt="">
+                            <p class="text-center">'username'</p>
+                        </li>
+                        <li class="nav-item d-flex mx-auto">
+                            <img class="icon-27 col" src="assets/svg/cog.svg" alt="settings icon">
+                            <a class="nav-link col my-auto" href="#" target="">Settings</a>
+                        </li>
+                        <li class="nav-item d-flex mx-auto">
+                            <img class="icon-27" src="assets/svg/signout.svg" alt="settings icon">
+                            <a class="nav-link my-auto" href="index.html" target="">Log out</a>
+                        </li>
+                    </ul>
+                </div> -->
             </div>
         </nav>
     </header>
@@ -136,7 +165,7 @@
         <!-- Takes you to confirmation pop up before allowing deletion. -->
 
         <div class="mainCard py-5" id="previousGames">
-            <h2 class="fw-bold text-white text-center">Previous Games</h2>
+            <h2 class="fw-bold text-white text-center">History</h2>
             <!-- Title -->
             <div class="bg-secondary mx-auto p-4">
                 <div class="d-none d-md-flex flex-row w-90 mx-auto">
@@ -162,7 +191,7 @@
                 </div>
                 <!-- Incorrect previous game -->
                 <div
-                    class="d-flex flex-column flex-md-row justify-content-around card bg-white w-90 mx-auto mb-3 rounded-21 py-1">
+                    class="d-flex flex-column flex-md-row justify-content-around card bg-primary w-90 mx-auto mb-3 rounded-21 py-1">
                     <div class="d-flex col order-0 order-md-last">
                         <div class="container icon-37 col ms-3 ms-md-1">
                             <img class="d-none icon-37" src="/assets/svg/star.svg" alt="Favourite">
@@ -174,8 +203,16 @@
 
                     <h6 class="text-white bg-secondary col p-2 rounded-4 mx-auto ms-md-4 text-center">'category'</h6>
                     <!-- H4: [Category] -->
-                    <h6 class="text-secondary p-2 col mx-auto text-center">'difficulty'</h6><!-- H4: [Difficulty] -->
+                    <h6 class="text-black p-2 col mx-auto text-center">'difficulty'</h6><!-- H4: [Difficulty] -->
                 </div>
+                <div class="d-flex flex-row w-75 mx-auto text-center text-white">
+                    <p class="col"><strong>Correct:</strong> 1</p>
+                    <p class="col"><strong>Incorrect:</strong> 1</p>
+                </div>
+                <button class="btn btn-custom-white d-flex flex-row mx-auto">
+                    <img class="icon-27 me-2" src="assets/svg/reset.svg" alt="reset button">
+                    reset history
+                </button>
             </div>
         </div>
 
