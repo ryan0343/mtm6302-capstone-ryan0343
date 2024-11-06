@@ -55,7 +55,7 @@
 .btn-custom-primary {
     --bs-btn-color: var(--black);
     --bs-btn-bg: var(--bs-primary);
-    --bs-btn-border-color: var(--white); 
+    --bs-btn-border-color: var(--bs-primary); 
     --bs-btn-hover-color: var(--bs-white);
     --bs-btn-hover-bg: var(--dependant-dark);
     --bs-btn-hover-border-color: var(--bs-white); 
@@ -123,7 +123,7 @@ body {
 }
 
 .rounded-9{
-    border-radius: 21px;
+    border-radius: 9px;
 }
 
 .rounded-21 {
@@ -189,9 +189,21 @@ body {
 }
 
 /* ICON STYLES */
+
+.icon-27 {
+    width: 27px;
+    --bs-gutter-x: 0rem;
+}
+
 .icon-37 {
     width: 38px;
     --bs-gutter-x: 0rem;
+}
+
+/* IMAGE STYLES */
+.profile-pic {
+    width: 95px;
+    border-radius: 95px;
 }
 
 /* TABLET STYLES */
@@ -212,12 +224,21 @@ body {
         position: relative; /* Default positioning */
     }
 
+    .disable {
+        display: none !important;
+    }
+
     .btn-custom-nav {
         width: 175px;
     }
 
     .mainCard {
         width: 590px;
+    }
+
+    .profile-pic {
+        width: 50px;
+        border-radius: 50px;
     }
 
 }
