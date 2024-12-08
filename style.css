@@ -179,7 +179,7 @@ body {
     margin: 0 auto;
 }
 
-.difficultyCard .btn {
+.mainCard .btn {
     width: 264px;
     height: 59px;
 }
@@ -224,16 +224,12 @@ body {
         position: relative; /* Default positioning */
     }
 
-    .disable {
-        display: none !important;
-    }
-
     .btn-custom-nav {
         width: 175px;
     }
 
     .mainCard {
-        width: 590px;
+        width: 600px;
     }
 
     .profile-pic {
