@@ -30,7 +30,7 @@
 
     <header class="order-last order-md-first text-white">
         <!-- Skip Links -->
-        <a class="visually-hidden-focusable" href="#content">Skip to main content</a>
+        <a class="visually-hidden-focusable" href="#mainCard">Skip to game</a>
         <a class="visually-hidden-focusable" href="#navLogo">Skip to navigation</a>
 
 
@@ -97,46 +97,8 @@
     </header>
     <main>
         <!-- Group 1: the game -->
-
-
         <div class="mainCard difficultyCard py-5" id="mainCard">
             <!-- Content from renderDifficulty or renderQuestion goes here -->
-        </div>
-
-        <!-- Question Card that replaces the Difficulty Card upon difficulty selection. -->
-        <div class="mainCard questionCard mx-auto py-5 d-none" id="question">
-            <!-- Container: -->
-            <h2 class="fw-bold text-white text-center">Question</h2> <!-- H2: Question -->
-            <div class="form-group bg-white fw-bold py-3 rounded-32 d-flex flex-column mx-auto">
-                <!-- FORM 2: Question white-bg  -->
-                <div class="text-center fw-bold g-3">
-                    <h6 class="text-secondary p-1 mx-auto">'difficulty'</h6><!-- H4: [Difficulty] -->
-                    <h6 class="text-white bg-secondary p-2 rounded-4 mx-auto">'category'</h6><!-- H4: [Category] -->
-                </div>
-                <h3 class="w-90 text-center mx-auto">What is the most popular combination of drinks?</h3>
-                <!-- H3: [Question itself] -->
-                <div class="container grid p-3 overflow-hidden">
-                    <div class="row row-cols-6">
-                        <!-- UL: The answer buttons -->
-                        <button type="button"
-                            class="col-12 col-md-6 btn btn-custom btn-custom-primary d-block fw-bold rounded-21 mx-auto py-3 fs-6"
-                            id="answer_aBtn">Milk & Cookies</button>
-                        <button type="button"
-                            class="col-12  btn col-md-6 btn-custom btn-custom-primary d-block fw-bold rounded-21 mx-auto py-3 fs-6"
-                            id="answer_bBtn">Gin & Tonic</button>
-                        <button type="button"
-                            class="col-12 btn col-md-6 btn-custom btn-custom-primary d-block fw-bold rounded-21 mx-auto py-3 fs-6"
-                            id="answer_cBtn">Vodka & Ice</button>
-                        <button type="button"
-                            class="col-12  btn col-md-6 btn-custom btn-custom-primary d-block fw-bold rounded-21 mx-auto py-3 fs-6"
-                            id="answer_dBtn">Rum & Coke</button>
-                    </div>
-                </div>
-                <!-- Button: Continue-->
-                <button type="submit"
-                    class="continueBtn btn mx-auto ms-md-auto me-md-5 btn-custom-primary fs-5 fw-bold">Continue</button>
-            </div>
-
         </div>
 
         <!-- Group 2: previous games -->
