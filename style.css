@@ -43,12 +43,12 @@
     --bs-btn-bg: var(--bs-white);
     --bs-btn-border-color: var(--dependant-dark);
     --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-hover-bg: var(--dependant-dark);
-    --bs-btn-hover-border-color: var(--bs-white);
+    --bs-btn-hover-bg: var(--bs-primary);
+    --bs-btn-hover-border-color: var(--bs-primary);
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: var(--bs-primary);
-    --bs-btn-active-border-color: var(--bs-secondary);
+    --bs-btn-active-bg: var(--dependant-dark);
+    --bs-btn-active-border-color: var(--bs-white);
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -82,6 +82,47 @@
 
 .nav-item .btn {
     font-size: 1rem;
+}
+
+/* Base styling for the .correct and .wrong buttons */
+button.correct, button.wrong {
+    position: relative; /* Ensure that the icon is positioned relative to the button */
+}
+
+/* Add checkmark icon for .correct class */
+button.correct::after {
+    content: "";
+    background-image: url('assets/svg/checkmark.svg'); /* Path to the checkmark icon */
+    background-size: contain; /* Ensure the icon fits inside */
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -10px; /* Position from the top of the button */
+    right: -13px; /* Position from the right of the button */
+    width: 37px; /* Set the width of the icon */
+    height: 37px; /* Set the height of the icon */
+}
+
+/* Add cross-circle icon for .wrong class */
+button.wrong::after {
+    content: "";
+    background-image: url('assets/svg/cross-circle.svg'); /* Path to the cross-circle icon */
+    background-size: contain; /* Ensure the icon fits inside */
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -10px; /* Position from the top of the button */
+    right: -13px; /* Position from the right of the button */
+    width: 37px; /* Set the width of the icon */
+    height: 37px; /* Set the height of the icon */
+}
+
+/* Styling for faded buttons */
+button.faded {
+    opacity: 0.7;
+}
+
+/* Disable clicking on buttons after the question is answered*/
+button.correct, button.wrong, button.faded {
+    pointer-events: none;
 }
 
 /* HEADER/FOOTER STYLES */
@@ -179,11 +220,29 @@ body {
     margin: 0 auto;
 }
 
-.mainCard .btn {
+#difficultyCard .btn {
     width: 264px;
     height: 59px;
 }
 
+#questionCard {
+    display: flex; /* Make the container a flexbox */
+    flex-wrap: wrap; /* Allow wrapping if there are multiple rows */
+    gap: 1rem; /* Add spacing between buttons */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: stretch; /* Ensure all buttons stretch to the tallest height */
+}
+
+#questionCard .btn {
+    flex: 1 1 auto; /* Allow buttons to grow and shrink */
+    display: flex; /* Make buttons flex containers */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    text-align: center;
+    white-space: normal; /* Allow wrapping for long text */
+    padding: 10px 15px; /* Add padding for better spacing */
+    min-height: 59px; /* Set a minimum height for smaller buttons */
+}
 .btn-custom-nav {
     max-width: 233px;
 }
