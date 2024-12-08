@@ -195,6 +195,7 @@ function renderHistory() {
 
     historyCard.innerHTML = historyCardHTML;
 
+    writeHistory();
 
     // retrieve reset button location
     $reset = document.getElementById('historyReset');
@@ -209,3 +210,10 @@ function renderHistory() {
 }
 
 renderHistory();
+
+// writeHistory()
+// write history values to JSON
+function writeHistory(){
+    localStorage.setItem('historyCorrect', JSON.stringify(historyCorrect));
+    localStorage.setItem('historyWrong', JSON.stringify(historyWrong));
+}
