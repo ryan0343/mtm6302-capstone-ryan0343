@@ -155,7 +155,26 @@ footer img {
     fill: var(--dependant-light);
 }
 
+/* BACKGROUND STYLES */
 
+.biggerdiv {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-image: url('assets/svg/background-bubbles1.svg'), url('assets/svg/background-bubbles2.svg');
+    background-size: 300px, 150px; /* Adjust depending on how you want the SVGs to scale */
+    background-repeat: no-repeat, no-repeat; /* Prevent repeating the SVGs */
+    background-position: top 20px left 5%, bottom right 5%; /* Position the SVGs as needed */
+}
+
+/* this is how I flip the background bubbles for the history*/
+/* it is so jank, but it works */
+.reverse {
+    transform: scaleX(-1);
+}
+
+.reverse .mainCard {
+    transform: scaleX(-1);
+}
 
 /* GENERAL STYLES */
 
@@ -288,7 +307,8 @@ body {
     }
 
     .mainCard {
-        width: 600px;
+        width: 500px;
+        margin-left: 25%;
     }
 
     .profile-pic {
@@ -296,4 +316,14 @@ body {
         border-radius: 50px;
     }
 
+}
+
+@media (min-width: 1000px) {
+    #mainCard {
+        margin-left: 35%;
+    }
+
+    #historyCard {
+        margin-left: 35%;
+    }
 }
