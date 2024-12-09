@@ -54,10 +54,10 @@
                             <a class="nav-link d-block d-md-none text-center mx-auto" href="index.html"><img
                                     class="nav-logo" src="assets/svg/Quizzy-Logo-1.svg" alt="Quizzy Logo"></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-none">
                             <a class="nav-link fw-bold text-center" href="signIn.html">Sign In</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item d-none">
                             <a class="btn btn-custom-white d-block mb-2 fw-bold rounded-21 btn-custom-nav ms-md-2 mx-auto"
                                 href="signUp.html">Sign up for free</a>
                         </li>
@@ -96,9 +96,11 @@
         </nav>
     </header>
     <main>
-        <!-- Group 1: the game -->
-        <div class="mainCard difficultyCard py-5" id="mainCard">
-            <!-- Content from renderDifficulty or renderQuestion goes here -->
+        <div class="biggerdiv">
+            <!-- Group 1: the game -->
+            <div class="mainCard difficultyCard py-5" id="mainCard">
+                <!-- Content from renderDifficulty or renderQuestion goes here -->
+            </div>
         </div>
 
         <!-- Group 2: previous games -->
@@ -110,55 +112,8 @@
         <!-- Delete button: -->
         <!-- Takes you to confirmation pop up before allowing deletion. -->
 
-        <div class="mainCard py-5" id="historyCard">
-            <h2 class="fw-bold text-white text-center">History</h2>
-            <!-- Title -->
-            <div class="bg-secondary mx-auto p-4 rounded-32">
-                <div class="d-none d-md-flex flex-row w-90 mx-auto">
-                    <h4 class="text-white rounded-4 ms-5 me-2 text-center">Category</h4><!-- H4: [Category] -->
-                    <h4 class="text-white ms-5 text-center">Difficulty</h4><!-- H4: [Difficulty] -->
-                </div>
-                <!-- Individual Items -->
-                <!-- Correct previous game -->
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-around card bg-white w-90 mx-auto mb-3 rounded-21 py-1">
-                    <div class="d-flex col order-0 order-md-last">
-                        <div class="container icon-37 col ms-3 ms-md-1">
-                            <img src="/assets/svg/star.svg" alt="Favourite">
-                        </div>
-                        <div class="container icon-37 col me-1 mx-md-auto">
-                            <img src="/assets/svg/checkmark.svg" alt="Correct">
-                        </div>
-                    </div>
-
-                    <h6 class="text-white bg-secondary col p-2 rounded-4 mx-auto ms-md-4 text-center">'category'</h6>
-                    <!-- H4: [Category] -->
-                    <h6 class="text-secondary p-2 col mx-auto text-center">'difficulty'</h6><!-- H4: [Difficulty] -->
-                </div>
-                <!-- Incorrect previous game -->
-                <div
-                    class="d-flex flex-column flex-md-row justify-content-around card bg-primary w-90 mx-auto mb-3 rounded-21 py-1">
-                    <div class="d-flex col order-0 order-md-last">
-                        <div class="container icon-37 col ms-3 ms-md-1">
-                            <img class="d-none icon-37" src="/assets/svg/star.svg" alt="Favourite">
-                        </div>
-                        <div class="container icon-37 col mx-md-auto">
-                            <img class="mx-auto" src="/assets/svg/cross-circle.svg" alt="incorrect">
-                        </div>
-                    </div>
-
-                    <h6 class="text-white bg-secondary col p-2 rounded-4 mx-auto ms-md-4 text-center">'category'</h6>
-                    <!-- H4: [Category] -->
-                    <h6 class="text-black p-2 col mx-auto text-center">'difficulty'</h6><!-- H4: [Difficulty] -->
-                </div>
-                <div class="d-flex flex-row w-75 mx-auto text-center text-white">
-                    <p class="col"><strong>Correct:</strong> 1</p>
-                    <p class="col"><strong>Incorrect:</strong> 1</p>
-                </div>
-                <button class="btn btn-custom-white d-flex flex-row mx-auto">
-                    <img class="icon-27 me-2" src="assets/svg/reset.svg" alt="reset button">
-                    reset history
-                </button>
+        <div class="biggerdiv reverse">
+            <div class="mainCard py-5" id="historyCard">
             </div>
         </div>
 
