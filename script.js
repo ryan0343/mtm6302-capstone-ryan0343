@@ -11,12 +11,7 @@ let $questionStored = {}
 
 // Array: historyArr
 // array that stores completed questions inside localStorage, deleting if reset by the user.
-let $historyArr = [{
-    category: "games",
-    difficulty: "impossible",
-    favourite: false,
-    correct: false
-}]
+let $historyArr = []
 
 // Array difficultyArr
 // stores all possible difficulties
@@ -35,11 +30,12 @@ const historyCard = document.getElementById('historyCard');
 // retrieve locally stored data if they exist
 const historyCorrectLS = JSON.parse(localStorage.getItem('historyCorrect'));
 const historyWrongLS = JSON.parse(localStorage.getItem('historyWrong'));
+const historyArrLS = JSON.parse(localStorage.getItem('historyArr'));
 
 // variables that track the number of correct and incorrect answers if locally stored. If they are not locally stored, then set them to 0.
-// const historyCorrect
+// var historyCorrect
 let historyCorrect = historyCorrectLS || 0;
-// const historyWrong
+// var historyWrong
 let historyWrong = historyWrongLS || 0;
 
 // FUNCTIONS
@@ -126,7 +122,6 @@ function renderQuestion() {
         if (e.target.tagName === "BUTTON") {
             const selectedButton = e.target; // The clicked button
             const questionButtons = $questionContainer.querySelectorAll("button"); // All buttons in the question group
-
             // Loop through all buttons in the group
             questionButtons.forEach((button) => {
                 // Add the 'correct' class to the correct button
@@ -152,7 +147,7 @@ function renderQuestion() {
 
             // unhide Continue button to select another difficulty
             const questionContinue = document.getElementById("questionContinue");
-            
+
             if (questionContinue) { // Ensure button exists before interacting with it
                 questionContinue.classList.remove('d-none');
                 questionContinue.addEventListener('click', function () {
@@ -160,6 +155,15 @@ function renderQuestion() {
                 });
             }
 
+            // add to historyArr
+            let newHistory = {
+                category: $questionStored.category,
+                difficulty: $questionStored.difficulty,
+                correct: selectedButton.dataset.correct
+            }
+
+            $historyArr.unshift(newHistory);
+            console.log($historyArr);
             renderHistory();
         }
     });
@@ -175,11 +179,55 @@ function renderHistory() {
     <!-- Title -->
     <div class="bg-secondary mx-auto p-4 rounded-32">
         <div class="d-none d-md-flex flex-row w-90 mx-auto">
-            <h4 class="text-white rounded-4 ms-5 me-2 text-center">Category</h4><!-- H4: [Category] -->
-            <h4 class="text-white ms-5 text-center">Difficulty</h4><!-- H4: [Difficulty] -->
+            <h4 class="text-white rounded-4 ms-4 me-2 text-center">Category</h4><!-- H4: [Category] -->
+            <h4 class="text-white ms-4 text-center">Difficulty</h4><!-- H4: [Difficulty] -->
         </div>`;
 
     // render all items from historyArr
+    $historyArr.forEach((question) => {
+        console.log(question);
+        if (question.correct == 'true') {
+            historyCardHTML += `<div
+                class="d-flex flex-column flex-md-row justify-content-around card bg-white w-90 mx-auto mb-3 rounded-21 py-1">
+                <div class="d-flex col order-0 order-md-last">
+                <div class="container icon-37 col ms-3 ms-md-1">
+                </div>
+                    <div class="container icon-37 col me-1 mx-md-auto">
+                        <img src="/assets/svg/checkmark.svg" alt="Correct">
+                    </div>
+                </div>
+                
+                <h6 class="text-white bg-secondary col p-2 rounded-4 mx-auto ms-md-4 text-center">
+                    ${question.category}
+                </h6>
+                <!-- Category -->
+                <h6 class="text-secondary p-2 col mx-auto text-center">
+                    ${question.difficulty}
+                </h6>
+                <!-- Difficulty -->
+            </div>`
+        } else {
+            historyCardHTML += `<div
+            class="d-flex flex-column flex-md-row justify-content-around card bg-primary w-90 mx-auto mb-3 rounded-21 py-1">
+            <div class="d-flex col order-0 order-md-last">
+                <div class="container icon-37 col ms-3 ms-md-1">
+                </div>
+                <div class="container icon-37 col mx-md-auto">
+                    <img class="mx-auto" src="/assets/svg/cross-circle.svg" alt="incorrect">
+                </div>
+            </div>
+
+            <h6 class="text-white bg-secondary col p-2 rounded-4 mx-auto ms-md-4 text-center">
+                    ${question.category}
+                </h6>
+                <!-- Category -->
+                <h6 class="text-black p-2 col mx-auto text-center">
+                    ${question.difficulty}
+                </h6>
+                <!-- Difficulty -->
+            </div>`
+        }
+    });
 
     // render counters
     historyCardHTML += `<div class="d-flex flex-row w-75 mx-auto text-center text-white" id="historyCounters">
@@ -213,7 +261,8 @@ renderHistory();
 
 // writeHistory()
 // write history values to JSON
-function writeHistory(){
+function writeHistory() {
     localStorage.setItem('historyCorrect', JSON.stringify(historyCorrect));
     localStorage.setItem('historyWrong', JSON.stringify(historyWrong));
+    localStorage.setItem('historyArr', JSON.stringify($historyArr));
 }
